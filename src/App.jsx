@@ -61,17 +61,12 @@ useEffect(()=>{
   
 });
 useEffect(() => {
-  if (activeView === 'Active') {
     const active = allTodos.filter(todo => !todo.completed);
     setActiveTodos(active);
-  } else if (activeView === 'Completed') {
     const completed = allTodos.filter(todo => todo.completed);
     setCompletedTodos(completed);
-  } else {
-    setActiveTodos(allTodos);
-    setCompletedTodos([]);
-  }
-}, [allTodos, activeView]);
+}, [allTodos]);
+
   return (
    <div 
    onClick={()=>navigator.vibrate(20)}
@@ -82,12 +77,15 @@ useEffect(() => {
    <InputForm addTodo={addTodo}/>
    <main className=' border-white border-[1px] w-[320px] relative sm:w-2/3 lg:w-[600px] min-h-[350px] max-h-[400px] overflow-y-auto flex flex-col items-center my-5 rounded-lg shadow-2xl'>
    <ViewSelector activeView={activeView} updateActiveView={updateActiveView} />
-   {(allTodos.length == 0 || (completedTodos.length == 0 && activeView === 'Completed')) ? (<div className='w-full h-full flex flex-col items-center justify-center '>
+   {(allTodos.length == 0 || (completedTodos.length == 0 && activeView === 'Completed')) ? 
+   (<div className='w-full h-full flex flex-col items-center justify-center '>
    <img width="48" height="48" src="https://img.icons8.com/color/48/checked-2--v1.png" alt="checked-2--v1"/>
     <h1 className='text-xl'>No Tasks</h1>
     <p className='opacity-60'>Anything to add?</p></div>) : (
     <div className='h-full w-full max-h-full overflow-y-auto'>
-   {activeView === 'All' ? allTodos.map((todo)=><Todo updateCompleted={updateCompleted} deleteTodo={deleteTodo} todo={todo} key= {todo.id} activeView={activeView}/>) : activeView === 'Active' ? activeTodos.map((todo)=><Todo todo={todo} key= {todo.id} activeView={activeView}/>) : completedTodos.map((todo)=><Todo todo={todo} key= {todo.id} activeView={activeView}/>)}
+   {activeView === 'All' && allTodos.map((todo)=><Todo updateCompleted={updateCompleted} deleteTodo={deleteTodo} todo={todo} key= {todo.id} activeView={activeView}/>) } 
+   { activeView === 'Active' && activeTodos.map((todo)=><Todo updateCompleted={updateCompleted} deleteTodo={deleteTodo} todo={todo} key= {todo.id} activeView={activeView}/>) }
+   {activeView === 'Completed' && completedTodos.map((todo)=><Todo updateCompleted={updateCompleted} deleteTodo={deleteTodo} todo={todo} key= {todo.id} activeView={activeView}/>)}
     </div>
     ) }
    <ClearButtons clearAll={clearAll} clearCompleted={clearCompleted} />
