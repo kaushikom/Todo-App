@@ -5,11 +5,13 @@ export default function InputForm({addTodo}){
     function handleSubmit(e){
         e.preventDefault()
         setValue('')
-        addTodo({
-            id: Date.now(),
-            title: value,
-            completed: false
-        })
+        if(value !== ''){
+            addTodo({
+                id: Date.now(),
+                title: value,
+                completed: false
+            })
+        }
     }
 
     return(

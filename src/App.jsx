@@ -69,7 +69,7 @@ useEffect(() => {
 
   return (
    <div 
-   onClick={()=>navigator.vibrate(20)}
+   onClick={()=>navigator.vibrate(10)}
    className='bg-slate-900 w-scree h-screen flex flex-col items-center relative text-slate-50 px-2' >
    <nav>
     <h1 className='text-white text-3xl font-bold mt-2' >Todo List</h1>
