@@ -17,7 +17,7 @@ const defaultTodos = [
   },
   {
     id: 3,
-    title: 'Stalk crush',
+    title: 'Finish Assignments',
     completed: true
   }
 ]
