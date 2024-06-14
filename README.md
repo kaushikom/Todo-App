@@ -1,8 +1,34 @@
-# React + Vite
+# Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, mobile-responsive task management application.
 
-Currently, two official plugins are available:
+[Live Demo](https://todo-app-iota-woad-27.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Add, delete, and check tasks
+- Haptic feedback for mobile users
+- Clear all tasks or only completed tasks
+- Three distinct views: All, Active, and Completed
+- Responsive design
+
+## Tech Stack
+
+- React.js
+- Tailwind CSS
+
+## Project Overview
+
+Todo App combines functionality with an intuitive user interface for efficient task management. It offers a smooth user experience across devices.
+
+### Key Implementations
+
+- Developed using React.js and Tailwind CSS for a responsive and visually appealing design
+- Implemented task management functions with haptic feedback for mobile users
+- Created multiple views (All, Active, Completed) and task clearing options for streamlined organization
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Run the development server with `npm start`
